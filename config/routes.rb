@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # get '/articles', to: 'articles#index'
   # get "/articles/:id", to: "articles#show"
 
+  #Alternative to have only specific routes
+  # resources :articles, only: [:index, :create]
+  # resources :articles, except: [:destroy]
+
   resources :articles do
     resources :comments
   end

@@ -12,6 +12,12 @@
     <%= form.text_area :body %>
   </div>
 
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, @article.getAllStatus %>
+  </div>
+
+  <br/><br/>
     <%= @article.errors.full_messages_for(:body)[0]%>
 
 

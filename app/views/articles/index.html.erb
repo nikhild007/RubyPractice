@@ -5,10 +5,12 @@
 
 <ul>
 <% for article in @articles %>
-    <li>
-        <%= article.title%> : <%= article.body%> 
-        <a href="<%= article_url(article) %>" >More Info</a>
-        <%= link_to article.title,article %>
-    </li>
+    <% unless article.isArchived? %>
+        <li>
+            <%= article.title%> : <%= article.body%> 
+            <a href="<%= article_url(article) %>" >More Info</a>
+            <%= link_to article.title,article %>
+        </li>
+    <% end %>
 <% end %>
 </ul>
