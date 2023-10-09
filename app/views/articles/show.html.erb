@@ -3,13 +3,35 @@
 
 <% else %>
 
-    Edit this : <%= link_to 'Edit', edit_article_url(@article)%>
+    Edit this : <%= link_to 'Edit', edit_article_url(@article)%> 
+    <br/>
 
+    Delete this : <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete } %>
     <br/> <br/>
 
     HERE IS MY DESCRIPTION : <br/>
     Title : <%= @article.title %>
     <br/>
     Description : <%= @article.body%>
+
+    <br/>
+
+    Existing Comments : 
+    <%= render @article.comments%>
+
+    <h2>Add a comment:</h2>
+    <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <p>
+        <%= form.label :commenter %><br>
+        <%= form.text_field :commenter %>
+    </p>
+    <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
 
 <%end%>

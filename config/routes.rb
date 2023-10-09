@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :students
   root 'home#index'
   get 'home/about'
-  
+
 
   # Instead of having defined each method simply use resources
   # get '/articles', to: 'articles#index'
   # get "/articles/:id", to: "articles#show"
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
