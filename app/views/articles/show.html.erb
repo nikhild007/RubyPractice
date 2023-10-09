@@ -1,0 +1,15 @@
+<% if @error %>
+    <%= @error%>
+
+<% else %>
+
+    Edit this : <%= link_to 'Edit', edit_article_url(@article)%>
+
+    <br/> <br/>
+
+    HERE IS MY DESCRIPTION : <br/>
+    Title : <%= @article.title %>
+    <br/>
+    Description : <%= @article.body%>
+
+<%end%>
