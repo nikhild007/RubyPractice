@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/about'
 
+  get '/login', to: 'login#index'
+
+  resources :students do 
+    resources :articles
+  end
+
 
   # Instead of having defined each method simply use resources
   # get '/articles', to: 'articles#index'

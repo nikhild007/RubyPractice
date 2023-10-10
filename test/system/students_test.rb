@@ -16,6 +16,7 @@ class StudentsTest < ApplicationSystemTestCase
 
     fill_in "Age", with: @student.age
     fill_in "Name", with: @student.name
+    fill_in "Password", with: @student.password
     click_on "Create Student"
 
     assert_text "Student was successfully created"
@@ -28,6 +29,7 @@ class StudentsTest < ApplicationSystemTestCase
 
     fill_in "Age", with: @student.age
     fill_in "Name", with: @student.name
+    fill_in "Password", with: @student.password
     click_on "Update Student"
 
     assert_text "Student was successfully updated"

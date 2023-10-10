@@ -1,32 +1,32 @@
-<%= form_with(model: student) do |form| %>
-  <% if student.errors.any? %>
+
+<div style="max-width:500px;" class="d-flex flex-column mx-auto ">
+<h3>Login Page</h3>
+<%= form_with(url: login_path, method: :post) do |form| %>
+  <% if @errors%>
     <div style="color: red">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
       <ul>
-        <% student.errors.each do |error| %>
+        <% @errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block", class: "form-label"  %>
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: "form-label" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :age, style: "display: block", class: "form-label"  %>
-    <%= form.number_field :age, class: "form-control" %>
-  </div>
-
-  <div>
+  <div class="mb-3">
     <%= form.label :password, style: "display: block", class: "form-label" %>
     <%= form.text_field :password, class: "form-control" %>
   </div>
-  <br/>
-  <div>
-    <%= form.submit 'Create Account' %>
+
+  <div class="mb-3">
+    <%= form.submit 'Log In' %>
   </div>
 <% end %>
+
+</div>

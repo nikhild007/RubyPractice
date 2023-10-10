@@ -1,9 +1,9 @@
-<h1>New student</h1>
-
-<%= render "form", student: @student %>
-
-<br>
-
-<div>
-  <%= link_to "Back to students", students_path %>
+<div style="max-width:500px;" class="d-flex flex-column mx-auto ">
+  <h3>Create Account</h3>
+  <%= render "form", student: @student %>
+  <br/>
+  <div>
+    <%= link_to "Back to students", students_path %>
+  </div>
 </div>
+

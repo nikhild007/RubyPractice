@@ -16,6 +16,6 @@ module Visible
     end
 
     def getAllStatus
-            VALID_STATUS
+        VALID_STATUS
     end
 end
